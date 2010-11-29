@@ -1,0 +1,32 @@
+AutomaticOrder
+==============
+
+Este es un plugin que sirve para mantener el listado de un modelo ordenado.
+Simplemente es necesario tener una columna 'integer' donde el plugin se encargara de almacenar
+el orden automaticamente.
+
+
+Example
+=======
+
+Si tenemos un modelo Foo con las siguientes características:
+- Su columna de BD para la ordenacion se llama foo_order
+- La columna foregin key de su clase padre es user_id
+Escribiariamos las siguientes lineas en el modelo
+
+automatic_order :order_column => :foo_order, :parent_columns => :user_id
+
+Dado que la libreria hace las siguiente suposicion por defecto:
+- La columna de ordenacion se llama nombre_del_modelo_order
+En este caso podriamos haber escrito solamente
+
+automatic_order :parent_columns => :user_id
+
+El padre solo se usa en caso de que haya una ordenación individual para los conjuntos de
+elementos que pertencen a cada uno de los padres. Si eso no ocurre, simplemente no poner +parent_class+
+
+Se puede definir más de un padre para la ordenación, en cuyo caso habremos de pasar p.ej., [:parent_col1,:parent_col2],
+de manera que en la ordenación tendrá más preferencia el primer elemento del Array.
+
+
+Copyright (c) 2009 Hector Parra, released under the MIT license
