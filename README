@@ -1,3 +1,5 @@
+This is an old plugin I created by the beginnings of Rails 2. Now I recommend the use of https://github.com/rails/acts_as_list 
+
 AutomaticOrder
 ==============
 
